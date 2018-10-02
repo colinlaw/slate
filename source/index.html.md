@@ -26,39 +26,39 @@ Welcome to the ByPass Mobile API! You can use our API to access the Mobile Order
 > To authorize, use this code:
 
 ```ruby
-require 'kittn'
+require 'bpm'
 
-api = Kittn::APIClient.authorize!('meowmeowmeow')
+api = bpm::APIClient.authorize!('bypass')
 ```
 
 ```python
-import kittn
+import bpm
 
-api = kittn.authorize('meowmeowmeow')
+api = bpm.authorize('bypass')
 ```
 
 ```shell
 # With shell, you can just pass the correct header with each request
 curl "api_endpoint_here"
-  -H "Authorization: meowmeowmeow"
+  -H "Authorization: bypass"
 ```
 
 ```javascript
-const kittn = require('kittn');
+const bpm = require('bpm');
 
-let api = kittn.authorize('meowmeowmeow');
+let api = bpm.authorize('bypass');
 ```
 
-> Make sure to replace `meowmeowmeow` with your API key.
+> Make sure to replace `bypass` with your API key.
 
-Kittn uses API keys to allow access to the API. You can register a new Kittn API key at our [developer portal](http://example.com/developers).
+bpm uses API keys to allow access to the API. You can register a new bpm API key at our [developer portal](http://example.com/developers).
 
-Kittn expects for the API key to be included in all API requests to the server in a header that looks like the following:
+bpm expects for the API key to be included in all API requests to the server in a header that looks like the following:
 
-`Authorization: meowmeowmeow`
+`Authorization: bypass`
 
 <aside class="notice">
-You must replace <code>meowmeowmeow</code> with your personal API key.
+You must replace <code>bypass</code> with your personal API key.
 </aside>
 
 # Kittens
@@ -66,28 +66,28 @@ You must replace <code>meowmeowmeow</code> with your personal API key.
 ## Get All Kittens
 
 ```ruby
-require 'kittn'
+require 'bpm'
 
-api = Kittn::APIClient.authorize!('meowmeowmeow')
+api = bpm::APIClient.authorize!('bypass')
 api.kittens.get
 ```
 
 ```python
-import kittn
+import bpm
 
-api = kittn.authorize('meowmeowmeow')
+api = bpm.authorize('bypass')
 api.kittens.get()
 ```
 
 ```shell
 curl "http://example.com/api/kittens"
-  -H "Authorization: meowmeowmeow"
+  -H "Authorization: bypass"
 ```
 
 ```javascript
-const kittn = require('kittn');
+const bpm = require('bpm');
 
-let api = kittn.authorize('meowmeowmeow');
+let api = bpm.authorize('bypass');
 let kittens = api.kittens.get();
 ```
 
@@ -132,28 +132,28 @@ Remember — a happy kitten is an authenticated kitten!
 ## Get a Specific Kitten
 
 ```ruby
-require 'kittn'
+require 'bpm'
 
-api = Kittn::APIClient.authorize!('meowmeowmeow')
+api = bpm::APIClient.authorize!('bypass')
 api.kittens.get(2)
 ```
 
 ```python
-import kittn
+import bpm
 
-api = kittn.authorize('meowmeowmeow')
+api = bpm.authorize('bypass')
 api.kittens.get(2)
 ```
 
 ```shell
 curl "http://example.com/api/kittens/2"
-  -H "Authorization: meowmeowmeow"
+  -H "Authorization: bypass"
 ```
 
 ```javascript
-const kittn = require('kittn');
+const bpm = require('bpm');
 
-let api = kittn.authorize('meowmeowmeow');
+let api = bpm.authorize('bypass');
 let max = api.kittens.get(2);
 ```
 
@@ -186,29 +186,29 @@ ID | The ID of the kitten to retrieve
 ## Delete a Specific Kitten
 
 ```ruby
-require 'kittn'
+require 'bpm'
 
-api = Kittn::APIClient.authorize!('meowmeowmeow')
+api = bpm::APIClient.authorize!('bypass')
 api.kittens.delete(2)
 ```
 
 ```python
-import kittn
+import bpm
 
-api = kittn.authorize('meowmeowmeow')
+api = bpm.authorize('bypass')
 api.kittens.delete(2)
 ```
 
 ```shell
 curl "http://example.com/api/kittens/2"
   -X DELETE
-  -H "Authorization: meowmeowmeow"
+  -H "Authorization: bypass"
 ```
 
 ```javascript
-const kittn = require('kittn');
+const bpm = require('bpm');
 
-let api = kittn.authorize('meowmeowmeow');
+let api = bpm.authorize('bypass');
 let max = api.kittens.delete(2);
 ```
 
