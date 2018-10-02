@@ -61,9 +61,9 @@ bpm expects for the API key to be included in all API requests to the server in 
 You must replace <code>bypass</code> with your personal API key.
 </aside>
 
-# Kittens
+# Context
 
-## Get All Kittens
+## Get Context
 
 ```ruby
 require 'bpm'
