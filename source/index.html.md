@@ -1,5 +1,5 @@
 ---
-title: Bypass Mobile API Reference
+title: Bypass Mobile APIs
 
 language_tabs: # must be one of https://git.io/vQNgJ
   - shell
@@ -8,8 +8,7 @@ language_tabs: # must be one of https://git.io/vQNgJ
   - javascript
 
 toc_footers:
-  - <a href='#'>Sign Up for a Developer Key</a>
-  - <a href='https://github.com/lord/slate'>Documentation Powered by Slate</a>
+  - <a href='https://www.bypassmobile.com/'>Bypass Mobile Home</a>
 
 includes:
   - errors
@@ -19,9 +18,32 @@ search: true
 
 # Introduction
 
-Welcome to the ByPass Mobile API! You can use our API to access the Mobile Ordering API endpoints. It is assumed that we will be sent a valid user identifier.
+Welcome to the ByPass Mobile APIs! You can use our APIs as a Collection of API calls to interact with Remote Ordering, Promotions and Stored Value.
+
+Bypass offers 3 API services that are accessed via a Proxy.
+
+**Remote Ordering:** The remote ordering API enables a 3rd party to generate a context call which is the base for accessing locations and menus. A 3rd party with location and menu access can create orders, send order payments and refund orders.
+
+**Promotions:** The promotions API allows a 3rd party to attach a promotion sych as 10% off an order when a promotion has been enabled by a customer for their location.
+
+**Stored Value:** The SV API provides a 3rd party with access to our integrated SV providers. With this services, you can check balances, redeem funds, add funds, activate cards, refund payments and manage accounts.
+
+**Note:** To process payments, you are required to tokenize a credit card. There is an example call to demonstrate how this call is performed.
+
+# Foundation
+
+## JWT Tokens
+## API Keys
+## URLs
+## Venues
+## Locations
+## Menus
 
 # Authentication
+
+## JWT Token
+
+## API Key
 
 > To authorize, use this code:
 
@@ -51,19 +73,21 @@ let api = bpm.authorize('bypass');
 
 > Make sure to replace `bypass` with your API key.
 
-bpm uses API keys to allow access to the API. You can register a new bpm API key at our [developer portal](http://example.com/developers).
+Bypass uses API keys to allow access to our services. You can request an API key from Bypass at [Bypass Mobile](https://www.bypassmobile.com/).
 
-bpm expects for the API key to be included in all API requests to the server in a header that looks like the following:
+Bypass requires a valid API key to be included in all API requests to the server in a header that looks like the following:
 
 `Authorization: bypass`
 
 <aside class="notice">
-You must replace <code>bypass</code> with your personal API key.
+You must replace <code>bypass</code> with your registered API key.
 </aside>
 
-# Context
+# Remote Ordering API
 
-## Get Context
+## Context
+
+### Get Context
 
 ```ruby
 require 'bpm'
@@ -112,124 +136,18 @@ let kittens = api.kittens.get();
 ]
 ```
 
-This endpoint retrieves all kittens.
+# Locations
 
-### HTTP Request
+## Get Locations
 
-`GET http://example.com/api/kittens`
+# Venues
 
-### Query Parameters
+## Get Venues
 
-Parameter | Default | Description
---------- | ------- | -----------
-include_cats | false | If set to true, the result will also include cats.
-available | true | If set to false, the result will include kittens that have already been adopted.
+# Orders
 
-<aside class="success">
-Remember — a happy kitten is an authenticated kitten!
-</aside>
+## Create Order
 
-## Get a Specific Kitten
+# Wallet
 
-```ruby
-require 'bpm'
-
-api = bpm::APIClient.authorize!('bypass')
-api.kittens.get(2)
-```
-
-```python
-import bpm
-
-api = bpm.authorize('bypass')
-api.kittens.get(2)
-```
-
-```shell
-curl "http://example.com/api/kittens/2"
-  -H "Authorization: bypass"
-```
-
-```javascript
-const bpm = require('bpm');
-
-let api = bpm.authorize('bypass');
-let max = api.kittens.get(2);
-```
-
-> The above command returns JSON structured like this:
-
-```json
-{
-  "id": 2,
-  "name": "Max",
-  "breed": "unknown",
-  "fluffiness": 5,
-  "cuteness": 10
-}
-```
-
-This endpoint retrieves a specific kitten.
-
-<aside class="warning">Inside HTML code blocks like this one, you can't use Markdown, so use <code>&lt;code&gt;</code> blocks to denote code.</aside>
-
-### HTTP Request
-
-`GET http://example.com/kittens/<ID>`
-
-### URL Parameters
-
-Parameter | Description
---------- | -----------
-ID | The ID of the kitten to retrieve
-
-## Delete a Specific Kitten
-
-```ruby
-require 'bpm'
-
-api = bpm::APIClient.authorize!('bypass')
-api.kittens.delete(2)
-```
-
-```python
-import bpm
-
-api = bpm.authorize('bypass')
-api.kittens.delete(2)
-```
-
-```shell
-curl "http://example.com/api/kittens/2"
-  -X DELETE
-  -H "Authorization: bypass"
-```
-
-```javascript
-const bpm = require('bpm');
-
-let api = bpm.authorize('bypass');
-let max = api.kittens.delete(2);
-```
-
-> The above command returns JSON structured like this:
-
-```json
-{
-  "id": 2,
-  "deleted" : ":("
-}
-```
-
-This endpoint deletes a specific kitten.
-
-### HTTP Request
-
-`DELETE http://example.com/kittens/<ID>`
-
-### URL Parameters
-
-Parameter | Description
---------- | -----------
-ID | The ID of the kitten to delete
-
+## Add Wallet
