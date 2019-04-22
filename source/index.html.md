@@ -2,15 +2,14 @@
 title: Bypass Mobile APIs
 
 language_tabs: # must be one of https://git.io/vQNgJ
-  - shell
-  - ruby
-  - python
+  - shell: cURL
   - javascript
 
 toc_footers:
   - <a href='https://www.bypassmobile.com/'>Bypass Mobile Home</a>
 
 includes:
+  - remoteordering
   - errors
 
 search: true
@@ -41,113 +40,16 @@ Bypass offers 3 API services that are accessed via a Proxy.
 
 # Authentication
 
-## JWT Token
-
 ## API Key
 
-> To authorize, use this code:
-
-```ruby
-require 'bpm'
-
-api = bpm::APIClient.authorize!('bypass')
-```
-
-```python
-import bpm
-
-api = bpm.authorize('bypass')
-```
-
-```shell
-# With shell, you can just pass the correct header with each request
-curl "api_endpoint_here"
-  -H "Authorization: bypass"
-```
-
-```javascript
-const bpm = require('bpm');
-
-let api = bpm.authorize('bypass');
-```
-
-> Make sure to replace `bypass` with your API key.
-
-Bypass uses API keys to allow access to our services. You can request an API key from Bypass at [Bypass Mobile](https://www.bypassmobile.com/).
-
-Bypass requires a valid API key to be included in all API requests to the server in a header that looks like the following:
-
-`Authorization: bypass`
+Bypass uses API keys to allow access to our services. You can request an API key from Bypass at [Bypass Mobile](https://www.bypassmobile.com/). Bypass requires a valid API key to be included in all API requests to the server in a header that looks like the following:
 
 <aside class="notice">
 You must replace <code>bypass</code> with your registered API key.
 </aside>
 
-# Remote Ordering API
+## JWT Token
 
-## Context
+Authenticating to the REST API requires generating a JWT, or Java Web Token. For more information around JWTs, see this link: [JWT Tokens](https://jwt.io/introduction/).
 
-### Get Context
-
-```ruby
-require 'bpm'
-
-api = bpm::APIClient.authorize!('bypass')
-api.kittens.get
-```
-
-```python
-import bpm
-
-api = bpm.authorize('bypass')
-api.kittens.get()
-```
-
-```shell
-curl "http://example.com/api/kittens"
-  -H "Authorization: bypass"
-```
-
-```javascript
-const bpm = require('bpm');
-
-let api = bpm.authorize('bypass');
-let kittens = api.kittens.get();
-```
-
-> The above command returns JSON structured like this:
-
-```json
-[
-  {
-    "id": 1,
-    "name": "Fluffums",
-    "breed": "calico",
-    "fluffiness": 6,
-    "cuteness": 7
-  },
-  {
-    "id": 2,
-    "name": "Max",
-    "breed": "unknown",
-    "fluffiness": 5,
-    "cuteness": 10
-  }
-]
-```
-
-# Locations
-
-## Get Locations
-
-# Venues
-
-## Get Venues
-
-# Orders
-
-## Create Order
-
-# Wallet
-
-## Add Wallet
+Internally, we refer to capturing and refreshing JWTs as “BIDM” or “Bypass Identity Management” – so if you see or hear reference to BIDM, they are talking about authenticating a device via a JWT (as opposed to a simple username/password combo).
